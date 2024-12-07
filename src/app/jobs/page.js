@@ -11,7 +11,8 @@ import { redirect } from "next/navigation";
 
 async function JobsPage({searchParams}){
     console.log(searchParams,'searchParams');
-    
+    console.log("Clerk Publishable Key:", process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY);
+
     const user=await currentUser();
     const profileInfo=await fetchProfileAction(user?.id);
     //  console.log(profileInfo);
